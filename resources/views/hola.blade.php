@@ -7,7 +7,7 @@
     <title>Hola Laravel</title>
 </head>
 <body>
-    <h1>¡Hola desde Blade!</h1>
+    <h1>¡Hola, soy Marlon con Laravel!</h1>
     <p>Este es mi primer archivo Blade en Laravel</p>
 </body>
 </html>
