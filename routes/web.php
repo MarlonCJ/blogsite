@@ -12,12 +12,19 @@ Route::get('/hola',function(){
 
 // crear ruta dinamica con parametro
 
-Route::get('/saludo/{nombre}', function($nombre){
-    return "Hola, $nombre. Bienvenido a Laravel";
-});
+// Route::get('/saludo/{nombre}', function($nombre){
+//     return "Hola, $nombre. Bienvenido a Laravel";
+// });
 
 // pasar datos a una vista
 
 Route::get('/saludo/{nombre}',function($nombre){
     return view('Hola', ['nombre' => $nombre]);
+});
+
+
+// Ejercicios leccion 2
+
+Route::get('/pagina/{numero}',function($numero){
+    return view('pagina', ['valor'=>$numero] );
 });
