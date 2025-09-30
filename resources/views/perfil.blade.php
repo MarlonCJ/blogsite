@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perfil</title>
-</head>
-<body>
-    <h1>Perfil de {{$nombre}}</h1>
-    <p>Edad : {{$edad}}</p>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('titulo', 'Perfil')
+
+@section('contenido')
+    <h2>Perfil de {{ $nombre }}</h2>
+    <p>Edad: {{ $edad }}</p>
+
+    @if($edad < 18)
+        <x-alerta>
+            Este usuario es menor de edad.
+        </x-alerta>
+    @endif
+@endsection
