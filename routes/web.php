@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,6 +56,9 @@ Route::get('/producto/{nombre?}',function($nombre = 'Desconocido'){
 
 // enviar datos a una vista
 
-Route::get('/perfil/{nombre}', function($nombre){
-    return view('perfil', ['nombre' => $nombre]);
-});
+// Route::get('/perfil/{nombre}', function($nombre){
+//     return view('perfil', ['nombre' => $nombre]);
+// });
+
+Route::get('/perfil/{nombre}/{edad}', [UsuarioController::class,'perfil']);
+Route::get('/usuarios',[UsuarioController::class, 'listado']);
